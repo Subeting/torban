@@ -11,6 +11,10 @@ curl https://raw.githubusercontent.com/SecOps-Institute/Tor-IP-Addresses/master/
 echo "downloaded!Tor ban started."
  cat torip.txt | while read line
  do
+   if [[ $line == "" ]];
+   	then 
+   		continue
+   	fi
    if [[ $line =~ $v6 ]];
    then
    ip6tables -t filter -A TORB -s ${line} -j DROP
