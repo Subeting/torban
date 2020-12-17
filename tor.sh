@@ -3,9 +3,13 @@ v6=':'
 iptables -X TORB
 iptables -t filter -N TORB
 iptables -I INPUT -j TORB
+iptables -I OUTPUT -j TORB
+
 ip6tables -X TORB
 ip6tables -t filter -N TORB
 ip6tables -I INPUT -j TORB
+ip6tables -I OUTPUT -j TORB
+
 curl https://www.dan.me.uk/torlist/ > torip.txt
 curl https://raw.githubusercontent.com/SecOps-Institute/Tor-IP-Addresses/master/tor-nodes.lst >> torip.txt
 echo "downloaded!Tor ban started."
