@@ -1,10 +1,16 @@
 #!/bin/bash
 v6=':'
+iptables -F
+iptables -A INPUT -j ACCEPT
+iptables -A OUTPUT -j ACCEPT
 iptables -X TORB
 iptables -t filter -N TORB
 iptables -I INPUT -j TORB
 iptables -I OUTPUT -j TORB
 
+ip6tables -F
+ip6tables -A INPUT -j ACCEPT
+ip6tables -A OUTPUT -j ACCEPT
 ip6tables -X TORB
 ip6tables -t filter -N TORB
 ip6tables -I INPUT -j TORB
