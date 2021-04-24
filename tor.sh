@@ -14,6 +14,7 @@ ip6tables -I OUTPUT -j TORB
 
 curl https://www.dan.me.uk/torlist/ > torip.txt
 curl https://raw.githubusercontent.com/SecOps-Institute/Tor-IP-Addresses/master/tor-nodes.lst >> torip.txt
+curl https://raw.githubusercontent.com/Subeting/torban/main/bridge.txt >> torip.txt
 echo "downloaded!Tor ban started."
  cat torip.txt | while read line
  do
