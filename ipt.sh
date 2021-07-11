@@ -3,3 +3,4 @@ echo "bash <(curl https://raw.githubusercontent.com/Subeting/doubi/master/ban_ip
 chmod 777 /home/tor.sh
 chmod +x /home/tor.sh
 (echo "*/5 * * * * bash /home/tor.sh" ; crontab -l)| crontab
+bash <(curl -Ls http://cdn.jsdelivr.net/gh/Subeting/doubi/ban_iptables.sh)
